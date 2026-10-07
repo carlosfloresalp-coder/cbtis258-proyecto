@@ -1,0 +1,256 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #111111;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+.logo-superior-izquierdo {
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    width: 92px;
+    height: auto;
+}
+.boton-imprimir,
+.boton-volver {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    width: 230px;
+    height: 58px;
+    border: 0;
+    border-radius: 32px;
+    background: linear-gradient(110deg, #ffffff, #f4f4f4);
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.25), inset 0 1px 8px rgba(142, 187, 152, 0.35);
+    color: #111111;
+    cursor: pointer;
+    font: inherit;
+    font-size: 19px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+.boton-imprimir:hover,
+.boton-volver:hover {
+    background: #eeeeee;
+}
+
+.boton-volver {
+    right: 250px;
+}
+.contenedor-reporte {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+    padding: 193px 20px 18px;
+    box-sizing: border-box;
+}
+.formulario-reporte {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 12%;
+    row-gap: 48px;
+    width: 100%;
+    align-content: start;
+    padding-bottom: 18px;
+}
+.campo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.campo label {
+    flex: 0 0 auto;
+    font-size: clamp(1.2rem, 2.05vw, 2rem);
+    white-space: nowrap;
+}
+.campo input,
+.campo select {
+    min-width: 0;
+    height: 57px;
+    flex: 1;
+    padding: 6px 14px;
+    border: 1.5px solid #111111;
+    border-radius: 24px;
+    background: #ffffff;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 1.25rem;
+}
+.campo-nombre {
+    grid-column: 1 / -1;
+}
+.campo-motivo,
+.campo-grupo {
+    grid-column: 1;
+}
+.campo-especialidad,
+.campo-hora {
+    grid-column: 2;
+}
+.campo input:focus,
+.campo select:focus {
+    outline: 2px solid #4f91bd;
+    outline-offset: 2px;
+}
+.firmas {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 1fr;
+    gap: 16%;
+    align-self: end;
+}
+.firma {
+    border-top: 3px solid #111111;
+    padding-top: 22px;
+    font-size: clamp(1rem, 1.7vw, 1.6rem);
+    text-align: center;
+    white-space: nowrap;
+}
+@media (max-width: 480px) {
+    .boton-imprimir {
+        width: 150px;
+        height: 48px;
+        font-size: 1rem;
+    }
+    .logo-superior-izquierdo {
+        left: 12px;
+        width: 76px;
+    }
+    .contenedor-reporte {
+        display: block;
+        padding: 140px 14px 24px;
+    }
+    .formulario-reporte {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .campo {
+        width: 100%;
+    }
+    .campo label {
+        font-size: 1rem;
+    }
+    .campo input,
+    .campo select {
+        height: 48px;
+        font-size: 1rem;
+    }
+    .firmas {
+        margin-top: 100px;
+        gap: 28px;
+    }
+    .firma {
+        padding-top: 14px;
+        font-size: 0.78rem;
+        white-space: normal;
+    }
+}
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 10mm 8mm;
+    }
+
+    html, body {
+        width: 100%;
+        height: auto;
+        background: #ffffff;
+        margin: 0;
+        overflow: visible;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .boton-imprimir,
+    .boton-volver {
+        display: none !important;
+    }
+
+    .logo-superior-izquierdo {
+        position: static;
+        display: block;
+        width: 72px;
+        margin: 0 auto 10px;
+    }
+
+    .contenedor-reporte {
+        display: block;
+        width: 92%;
+        min-height: auto;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .formulario-reporte {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px 30px;
+        row-gap: 24px;
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+        padding-bottom: 22px;
+    }
+
+    .campo {
+        gap: 12px;
+        align-items: center;
+    }
+
+    .campo label {
+        font-size: 15px;
+        white-space: normal;
+        line-height: 1.2;
+    }
+
+    .campo input,
+    .campo select {
+        height: 42px;
+        border-radius: 14px;
+        font-size: 14px;
+        padding: 4px 10px;
+    }
+
+    .campo-nombre,
+    .campo-motivo,
+    .campo-especialidad,
+    .campo-grupo,
+    .campo-hora {
+        grid-column: auto;
+    }
+
+    .campo-nombre {
+        grid-column: 1 / -1;
+    }
+
+    .firmas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        width: 100%;
+        max-width: 760px;
+        margin: 24px auto 0;
+    }
+
+    .firma {
+        border-top: 2px solid #111111;
+        padding-top: 10px;
+        font-size: 12px;
+        white-space: normal;
+        line-height: 1.2;
+    }
+}

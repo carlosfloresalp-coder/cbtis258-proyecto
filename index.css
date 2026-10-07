@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #7d2929;
+    --panel: rgba(70, 15, 15, 0.88);
+    --white: #ffffff;
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px;
+    font-family: "Times New Roman", serif;
+    isolation: isolate;
+    background-color: var(--primary);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: #1d2433;
+}
+
+.slideshow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(45, 10, 10, 0.42);
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    animation: image-transition 18s infinite;
+}
+
+.slide-one {
+    background-image: url('cbtis.jfif');
+}
+
+.slide-two {
+    background-image: url('cbtis2.jfif');
+    animation-delay: -6s;
+}
+
+.slide-three {
+    background-image: url('cbtis3.png');
+    animation-delay: -12s;
+}
+
+.slide-four {
+    background-image: url('cbtis4.jfif');
+    animation-delay: -18s;
+}
+
+.welcome {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 850px);
+    padding: 45px 50px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 22px;
+    background: var(--panel);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(6px);
+    text-align: center;
+}
+
+@keyframes image-transition {
+    0%, 5%, 38%, 100% { opacity: 0; }
+    12%, 30% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slide {
+        animation: none;
+    }
+
+    .slide-one {
+        opacity: 1;
+    }
+}
+
+h1 {
+    margin: 0 0 22px;
+    color: var(--white);
+    font-size: 38px;
+}
+
+h2 {
+    margin: 0 0 18px;
+    color: var(--white);
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    margin: 0;
+    color: var(--white);
+    font-size: 17px;
+}
+
+.button {
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 0 28px;
+    border-radius: 12px;
+    background: var(--white);
+    color: var(--primary);
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #f0dede;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 500px) {
+    .welcome {
+        padding: 35px 26px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+}

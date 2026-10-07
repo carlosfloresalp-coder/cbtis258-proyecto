@@ -1,0 +1,420 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #7a1212;
+    --accent: #e7f0ff;
+    --text: #1d2433;
+    --muted: #5b6475;
+    --white: #ffffff;
+    --gold: #d8aa52;
+    --shadow: 0 18px 45px rgba(122, 18, 18, 0.45);
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+}
+
+body {
+    background: url('http://localhost/cbtis%20proyecto/cobrafondo.png') no-repeat center center fixed !important;
+    background-size: cover !important;
+    background-color: #5e0d0d !important;
+}
+
+
+
+.page-shell {
+    position: relative;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 25px;
+    background: transparent;
+}
+
+.content {
+    background: rgba(122, 22, 22, 0.42);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+}
+
+.hero {
+    margin-bottom: 25px;
+}
+
+.tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero h2 {
+    margin: 0;
+    color: white;
+    font-size: 32px;
+}
+
+p {
+    margin: 0 0 18px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 18px;
+    padding: 14px 16px;
+    border: 1px solid #e6a0a0;
+    border-left: 5px solid #7a1212;
+    border-radius: 10px;
+    background: #fff0f0;
+    color: #7a1212;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+.error-message::before {
+    content: "!";
+    display: grid;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    border-radius: 50%;
+    background: #7a1212;
+    color: white;
+    line-height: 1;
+}
+
+.subtitle {
+    max-width: 650px;
+    margin: 12px 0 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.form-panel {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 24px;
+    padding: 25px;
+}
+
+.contenedor {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 25px 30px;
+}
+
+.contenedor h3 {
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+.linea {
+    width: 100%;
+    height: 1px;
+    margin: 16px auto 25px;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.dato {
+    width: 600px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 14px 0;
+}
+
+.dato label {
+    width: 175px;
+    flex-shrink: 0;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.dato input,
+.dato select {
+    flex: 1;
+    height: 38px;
+    padding: 0 15px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.94);
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.2s ease;
+}
+
+.dato select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image:
+        linear-gradient(45deg, transparent 50%, #7a1212 50%),
+        linear-gradient(135deg, #7a1212 50%, transparent 50%),
+        linear-gradient(to right, rgba(122, 18, 18, 0.08), rgba(122, 18, 18, 0.08));
+    background-position:
+        calc(100% - 18px) calc(50% - 3px),
+        calc(100% - 13px) calc(50% - 3px),
+        calc(100% - 36px) 0;
+    background-size: 5px 5px, 5px 5px, 1px 100%;
+    background-repeat: no-repeat;
+    padding-right: 42px;
+    cursor: pointer;
+}
+
+.dato input::placeholder {
+    color: #999;
+}
+
+.dato input:hover,
+.dato select:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dato input:focus,
+.dato select:focus {
+    border-color: var(--gold);
+    box-shadow:
+        0 0 0 3px rgba(216, 170, 82, 0.25),
+        0 5px 12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+.dato select option {
+    color: #333;
+    background: white;
+}
+
+/* PERSONAS AUTORIZADAS */
+
+.credenciales {
+    width: 600px;
+    max-width: 100%;
+    margin-top: 25px;
+}
+
+.credenciales p {
+    margin: 0 0 15px;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.fotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.credencial {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.foto {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.foto input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.credencial > input[type="text"] {
+    width: 100%;
+    height: 38px;
+    padding: 0 12px;
+    border: 2px solid white;
+    border-radius: 10px;
+    outline: none;
+    background: white;
+    color: #333;
+    font-size: 13px;
+    text-align: center;
+}
+
+.credencial > input[type="text"]:focus {
+    border-color: #d8aa52;
+    box-shadow: 0 0 0 3px rgba(216, 170, 82, 0.25);
+}
+
+@media (max-width: 600px) {
+    .fotos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* BOTONES */
+
+.botones {
+    position: absolute;
+    right: 30px;
+    top: 280px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.botones button,
+.btn-volver {
+    width: 220px;
+    height: 50px;
+    border-radius: 12px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+/* CREAR JUSTIFICANTE */
+
+.botones button {
+    border: 2px solid var(--gold);
+    background: #8d3030;
+    color: white;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.botones button:hover {
+    background: #a83d3d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* VOLVER */
+
+.btn-volver {
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.95);
+    color: #7d2929;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+.btn-volver:hover {
+    background: #f1dfb5;
+    border-color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 800px) {
+
+    .page-shell {
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .form-panel {
+        padding: 15px;
+    }
+
+    .contenedor {
+        padding: 20px;
+    }
+
+    .dato {
+        width: 100%;
+    }
+
+    .botones {
+        position: static;
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .botones button,
+    .btn-volver {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .dato {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dato label {
+        width: 100%;
+    }
+
+    .fotos {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+    }
+
+    .contenedor h3 {
+        font-size: 21px;
+    }
+}

@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #7a1212;
+    --primary-soft: #d8bcbc;
+    --accent: #e7f0ff;
+    --text: #1d2433;
+    --muted: #5b6475;
+    --white: #ffffff;
+    --shadow: 0 18px 45px rgba(122, 18, 18, 0.637);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url('cobrafondo.png') center/cover no-repeat fixed;
+    color: var(--text);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(83, 19, 19, 0.18);
+    pointer-events: none;
+}
+
+.page-shell {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 32px 24px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(252, 2, 2, 0.08);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 18px 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand img {
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 10px 22px rgba(122, 18, 18, 0.815);
+}
+
+.eyebrow {
+    display: block;
+    margin: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+h1 {
+    margin: 4px 0 0;
+    font-size: clamp(1.7rem, 2vw + 1rem, 2.4rem);
+    color: var(--primary);
+}
+
+.content {
+    margin-top: 34px;
+    background: rgba(122, 22, 22, 0.78);
+    border: 1px solid rgba(39, 0, 0, 0.08);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    padding: 34px 28px 26px;
+}
+
+.hero {
+    margin-bottom: 32px;
+}
+
+.tag {
+    display: inline-block;
+    margin: 0 0 18px;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: clamp(2rem, 3vw, 3rem);
+    color: #f2f2f2;
+}
+
+.subtitle {
+    max-width: 660px;
+    margin: 16px 0 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.search-panel {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+    padding: 26px;
+}
+
+.formulario-busqueda {
+    width: min(520px, 100%);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+label {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 1.05rem;
+    box-sizing: border-box;
+    color: var(--text);
+}
+
+.botones {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-buscar,
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn-buscar {
+    border: none;
+    background: #ffffff;
+    color: #0d1b2a;
+}
+
+.btn-volver {
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary);
+}
+
+.btn-buscar:hover,
+.btn-volver:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 640px) {
+    .page-shell {
+        margin: 24px 12px;
+        padding: 0;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .content {
+        padding: 24px 18px;
+    }
+
+    .search-panel {
+        padding: 18px 16px;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+
+    .btn-buscar,
+    .btn-volver {
+        width: 100%;
+    }
+}

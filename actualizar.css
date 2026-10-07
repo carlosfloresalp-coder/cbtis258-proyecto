@@ -1,0 +1,485 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: #7d2929;
+    background-repeat: no-repeat;
+   background-size: 90% auto;
+    background-position: center;
+
+    font-family: "Times New Roman", serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+}
+
+
+.contenedor {
+    position: relative;
+
+    width: 900px;
+    min-height: 570px;
+
+    padding: 35px 45px;
+
+    background: rgba(60, 15, 15, 0.45);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* ==========================================
+   TITULO
+========================================== */
+
+h1 {
+    margin: 0;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+    text-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ==========================================
+   LINEA
+========================================== */
+
+.linea {
+    width: 100%;
+
+    height: 2px;
+
+    margin: 14px 0 30px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-radius: 10px;
+}
+
+
+/* ==========================================
+   CAMPOS
+========================================== */
+
+.dato {
+    width: 470px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ETIQUETAS */
+
+.dato label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.3px;
+
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+/* INPUT */
+
+.dato input {
+    width: 100%;
+
+    height: 45px;
+
+    padding: 8px 15px;
+
+    border: 2px solid transparent;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #333333;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.18);
+
+    transition: 0.2s ease;
+}
+
+
+/* CUANDO SE SELECCIONA */
+
+.dato input:focus {
+    border-color: #dca3a3;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.15),
+        0 7px 15px rgba(0, 0, 0, 0.22);
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   CREDENCIALES
+========================================== */
+
+.credenciales {
+    width: 470px;
+
+    margin-top: 28px;
+
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: bold;
+}
+
+
+.credenciales p {
+    margin: 0 0 14px;
+
+    line-height: 25px;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ==========================================
+   FOTOS
+========================================== */
+
+.fotos {
+    width: 470px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+
+/* ==========================================
+   CUADROS DE CREDENCIAL
+========================================== */
+
+.foto {
+    position: relative;
+
+    height: 80px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 2px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hover */
+
+.foto:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 18px rgba(0, 0, 0, 0.28);
+}
+
+
+/* ==========================================
+   TEXTO DENTRO DE LOS CUADROS
+========================================== */
+
+.foto::before {
+    content: "+";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #7d2929;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 23px;
+
+    font-weight: normal;
+
+    line-height: 28px;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.botones {
+    position: absolute;
+
+    right: 45px;
+    bottom: 45px;
+
+    width: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+/* ==========================================
+   BOTÓN PRINCIPAL
+========================================== */
+
+.botones button {
+    width: 100%;
+
+    min-height: 52px;
+
+    padding: 8px 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: #7d2929;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 14px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* ==========================================
+   HOVER BOTONES
+========================================== */
+
+.botones button:hover {
+    background: #f3dddd;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(0, 0, 0, 0.28);
+}
+
+
+/* ==========================================
+   BOTÓN SALIDA
+========================================== */
+
+.botones button:first-child {
+    background: #ffffff;
+
+    color: #7d2929;
+}
+
+
+/* ==========================================
+   BOTÓN VOLVER
+========================================== */
+
+.botones button:last-child {
+    background: transparent;
+
+    color: white;
+
+    border: 2px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow: none;
+}
+
+
+.botones button:last-child:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+}
+
+
+/* ==========================================
+   EFECTO AL PRESIONAR
+========================================== */
+
+.botones button:active {
+    transform: scale(0.98);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 850px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .contenedor {
+        width: 100%;
+
+        max-width: 700px;
+
+        padding: 30px;
+    }
+
+    .dato,
+    .credenciales,
+    .fotos {
+        width: 100%;
+    }
+
+    .botones {
+        position: relative;
+
+        right: auto;
+        bottom: auto;
+
+        width: 100%;
+
+        margin-top: 30px;
+    }
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 550px) {
+
+    body {
+        padding: 10px;
+
+        align-items: flex-start;
+    }
+
+    .contenedor {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 25px 20px;
+
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+
+        line-height: 30px;
+    }
+
+    .linea {
+        margin-bottom: 25px;
+    }
+
+    .dato {
+        margin-bottom: 17px;
+    }
+
+    .dato label {
+        font-size: 16px;
+    }
+
+    .dato input {
+        height: 43px;
+    }
+
+    .credenciales {
+        margin-top: 25px;
+
+        font-size: 17px;
+    }
+
+    .fotos {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .foto {
+        height: 80px;
+    }
+
+    .botones {
+        margin-top: 25px;
+    }
+}
+
